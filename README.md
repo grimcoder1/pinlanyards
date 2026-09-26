@@ -2,7 +2,7 @@
 
 Landing page estática para GitHub Pages con catálogo generado automáticamente desde nombres de imágenes sincronizadas desde una carpeta OneDrive.
 
-Dominio canónico preparado: `https://pinlanyards.com/`.
+Dominio canónico preparado: `https://pinlanya-rd.com/`.
 
 Repositorio privado: `https://github.com/grimcoder1/pinlanyards`.
 
@@ -58,7 +58,7 @@ La primera versión incluye tres imágenes de demostración en `productos/` para
 ## Estado de la primera corrida
 
 - Build local validado con 3 productos de demostración.
-- Dominio canónico y archivo `CNAME` preparados para `pinlanyards.com`.
+- Dominio canónico y archivo `CNAME` preparados para `pinlanya-rd.com`.
 - Workflow de GitHub Pages preparado; la fuente **GitHub Actions** debe activarse manualmente en **Settings → Pages**.
 - WhatsApp comercial configurado: `+1 809-768-2327`.
 - Pendiente para la automatización final: ruta exacta de la carpeta OneDrive canónica.

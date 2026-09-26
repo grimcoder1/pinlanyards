@@ -2,7 +2,7 @@
 
 ## Datos confirmados de esta instalación
 
-- Dominio canónico: `https://pinlanyards.com/`
+- Dominio canónico: `https://pinlanya-rd.com/`
 - Repositorio privado: `https://github.com/grimcoder1/pinlanyards.git`
 - Rama operativa: `main`
 - Instagram: `https://www.instagram.com/pinlandyards/`

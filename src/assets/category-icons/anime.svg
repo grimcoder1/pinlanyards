@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#ff347b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Icono genérico kawaii/manga, sin personajes ni marcas registradas -->
+  <path d="M14 29c0-13 8-21 18-21s18 8 18 21v8c0 11-8 19-18 19s-18-8-18-19v-8z"/>
+  <path d="M15 26c5-2 9-6 12-12 3 5 9 9 22 11"/>
+  <path d="M22 34l4 2-4 2M42 34l-4 2 4 2"/>
+  <path d="M28 45c3 2 5 2 8 0"/>
+  <path d="M10 14l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/>
+  <path d="M52 8l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5L52 8z"/>
+</svg>

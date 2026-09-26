@@ -1,0 +1,15 @@
+# Local sync configuration - never commit
+.catalog-sync.local.json
+logs/
+*.log
+
+# Build output
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

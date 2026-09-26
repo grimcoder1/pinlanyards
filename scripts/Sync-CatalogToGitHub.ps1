@@ -36,7 +36,7 @@ try {
     $cfg = Get-Content $ConfigPath -Raw | ConvertFrom-Json
     $Source = [string]$cfg.sourceFolder
     $Repo = [string]$cfg.localRepoPath
-    $Branch = if ($cfg.branch) { [string]$cfg.branch } else { "main" }
+    $Branch = if ($cfg.branch) { [string]$cfg.branch } else { "staging" }
     $Dest = Join-Path $Repo "productos"
 
     if (-not (Test-Path $Source)) { throw "No existe la carpeta OneDrive canónica: $Source" }
@@ -44,6 +44,9 @@ try {
 
     Push-Location $Repo
     try {
+        & git checkout $Branch | ForEach-Object { Write-Log $_ }
+        if ($LASTEXITCODE -ne 0) { throw "git checkout $Branch falló con código $LASTEXITCODE" }
+
         # productos/ is a mirror of the canonical OneDrive source. Clean only that path
         # so a previous rejected/invalid sync cannot block the next git pull.
         & git restore --staged --worktree -- productos 2>$null

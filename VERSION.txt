@@ -1,9 +1,10 @@
 Pin & Lanyards Store by shers — catálogo landing
-Versión: 2.4
+Versión: 2.5
 Fecha de paquete: 2026-09-26
 Cambios principales:
 - primera corrida local con catálogo demo de 3 productos
 - dominio canónico pinlanya-rd.com y CNAME preparados
+- flujo de publicación staging -> main basado en grimats-web
 - compatibilidad local con el lanzador de Python `py -3`
 - ancho fluido sin alterar la estructura visual aprobada
 - inicio moderadamente más compacto

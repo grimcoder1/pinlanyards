@@ -4,7 +4,8 @@
 
 - Dominio canónico: `https://pinlanya-rd.com/`
 - Repositorio privado: `https://github.com/grimcoder1/pinlanyards.git`
-- Rama operativa: `main`
+- Rama de trabajo y sincronización: `staging`
+- Rama de publicación GitHub Pages: `main`
 - Instagram: `https://www.instagram.com/pinlandyards/`
 - WhatsApp comercial: `18097682327`
 - Pendiente del propietario: ruta OneDrive canónica
@@ -204,7 +205,7 @@ No continúes a producción si el build falla.
 
 ## 5. Configuración GitHub Pages
 
-Verifica que la rama operativa sea `main` salvo que el repositorio indique otra.
+Usa `staging` como rama operativa y `main` como rama de producción. El workflow de Pages solo debe ejecutarse al recibir cambios en `main`.
 
 El workflow `.github/workflows/pages.yml` debe:
 
@@ -213,6 +214,15 @@ El workflow `.github/workflows/pages.yml` debe:
 3. ejecutar `python scripts/build_site.py`,
 4. subir `dist` como artifact de Pages,
 5. desplegarlo con GitHub Pages.
+
+Para publicar, ejecutar desde `staging`:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy-staging-prod.ps1 `
+  -CommitMessage "deploy: publicar catálogo"
+```
+
+El script debe validar el build, subir `staging`, promoverla a `main`, activar Pages mediante el push a `main` y volver a dejar ambas ramas sincronizadas.
 
 En GitHub, guía paso a paso para verificar:
 
@@ -241,6 +251,12 @@ Sync-CatalogToGitHub.ps1
 <repositorio-local>\productos
     ↓
 git commit / git push
+    ↓
+staging
+    ↓
+deploy-staging-prod.ps1
+    ↓
+main
     ↓
 GitHub Actions
     ↓
@@ -278,7 +294,7 @@ Desde una copia temporal o desde el repositorio ya clonado, ejecutar:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Setup-CatalogSync.ps1 `
   -SourceFolder "<RUTA_ONEDRIVE_CANONICA>" `
   -RepositoryUrl "<URL_REPOSITORIO_GITHUB>" `
-  -Branch "main" `
+  -Branch "staging" `
   -IntervalMinutes 5
 ```
 
@@ -313,7 +329,8 @@ La configuración local **no debe subirse a GitHub**.
 7. si hay archivo inválido: **no hacer push** y dejar error claro en log,
 8. si no hay cambios: terminar sin commit,
 9. si hay cambios: `git add`, `git commit`, `git push`,
-10. GitHub Actions reconstruye Pages.
+10. los cambios quedan en `staging` hasta ejecutar `scripts/deploy-staging-prod.ps1`,
+11. el script promueve `staging` a `main` y GitHub Actions reconstruye Pages.
 
 No hacer push de archivos con nombres inválidos.
 
@@ -354,20 +371,21 @@ Pídeme crear o copiar en la carpeta OneDrive canónica una imagen con un nombre
 Después:
 
 1. correr el job manualmente,
-2. verificar que apareció en GitHub dentro de `productos/`,
-3. verificar Action exitosa,
-4. verificar que aparece en el catálogo,
-5. probar búsqueda por “Producto de prueba”,
-6. probar filtro `Anime` y verificar su icono específico,
-7. cambiar nombre a:
+2. verificar que apareció en GitHub dentro de `productos/` en `staging`,
+3. ejecutar `scripts/deploy-staging-prod.ps1`,
+4. verificar la Action exitosa disparada desde `main`,
+5. verificar que aparece en el catálogo,
+6. probar búsqueda por “Producto de prueba”,
+7. probar filtro `Anime` y verificar su icono específico,
+8. cambiar nombre a:
 
 ```text
 900_Producto de prueba_Agotado_100_Anime.jpg
 ```
 
-8. volver a sincronizar,
-9. verificar que ahora muestre `Agotado` y **“Pedir y reservarlo”**,
-10. eliminar la imagen de prueba y confirmar que desaparece después de la siguiente sincronización.
+9. volver a sincronizar y publicar desde `staging`,
+10. verificar que ahora muestre `Agotado` y **“Pedir y reservarlo”**,
+11. eliminar la imagen de prueba, sincronizar, publicar y confirmar que desaparece.
 
 No declarar el setup terminado hasta completar esta prueba o hasta que yo decida omitirla explícitamente.
 

@@ -60,8 +60,20 @@ La primera versión incluye tres imágenes de demostración en `productos/` para
 - Build local validado con 3 productos de demostración.
 - Dominio canónico y archivo `CNAME` preparados para `pinlanya-rd.com`.
 - Workflow de GitHub Pages preparado; la fuente **GitHub Actions** debe activarse manualmente en **Settings → Pages**.
+- Flujo de publicación: trabajo en `staging`, promoción controlada a `main` y despliegue de Pages únicamente desde `main`.
 - WhatsApp comercial configurado: `+1 809-768-2327`.
 - Pendiente para la automatización final: ruta exacta de la carpeta OneDrive canónica.
+
+## Publicar staging en producción
+
+Trabajar y probar en la rama `staging`. Cuando esté lista para publicarse, ejecutar desde la raíz del proyecto:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy-staging-prod.ps1 `
+  -CommitMessage "deploy: publicar catálogo"
+```
+
+El script valida el catálogo y el build, sube `staging`, la promueve a `main`, activa el workflow de GitHub Pages y vuelve a dejar ambas ramas sincronizadas.
 
 ## Integración Windows + OneDrive + GitHub
 

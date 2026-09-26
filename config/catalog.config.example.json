@@ -2,7 +2,7 @@
   "sourceFolder": "C:\\Users\\USUARIO\\OneDrive\\PinLandYards\\Catalogo",
   "repositoryUrl": "https://github.com/USUARIO/REPOSITORIO.git",
   "localRepoPath": "C:\\Users\\USUARIO\\GRIMATS\\pinlandyards-catalogo",
-  "branch": "main",
+  "branch": "staging",
   "taskName": "PinLandYards Catalog Sync",
   "intervalMinutes": 5
 }

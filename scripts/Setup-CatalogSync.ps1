@@ -3,7 +3,7 @@ param(
     [string]$SourceFolder,
     [string]$RepositoryUrl,
     [string]$LocalRepoPath,
-    [string]$Branch = "main",
+    [string]$Branch = "staging",
     [string]$TaskName = "PinLandYards Catalog Sync",
     [int]$IntervalMinutes = 5
 )

@@ -60,8 +60,7 @@ La primera versión incluye tres imágenes de demostración en `productos/` para
 - Build local validado con 3 productos de demostración.
 - Dominio canónico y archivo `CNAME` preparados para `pinlanyards.com`.
 - Workflow de GitHub Pages preparado; la fuente **GitHub Actions** debe activarse manualmente en **Settings → Pages**.
-- WhatsApp comercial configurado: `+1 809-768-2327`.
-- Pendiente para la automatización final: ruta exacta de la carpeta OneDrive canónica.
+- Pendientes para la automatización final: ruta exacta de la carpeta OneDrive canónica y número comercial de WhatsApp.
 
 ## Integración Windows + OneDrive + GitHub
 

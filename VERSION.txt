@@ -1,13 +1,10 @@
 Pin & Lanyards Store by shers — catálogo landing
-Versión: 2.2
+Versión: 2.1
 Fecha de paquete: 2026-09-26
 Cambios principales:
 - primera corrida local con catálogo demo de 3 productos
 - dominio canónico pinlanyards.com y CNAME preparados
 - compatibilidad local con el lanzador de Python `py -3`
-- diseño fluido a todo el ancho y cabecera/hero más compactos
-- iconos reales de Instagram y WhatsApp
-- WhatsApp comercial configurado: +1 809-768-2327
 - categorías dinámicas con iconos SVG
 - categoría Anime con icono propio genérico/kawaii
 - fallback visual para categorías nuevas

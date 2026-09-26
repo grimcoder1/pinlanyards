@@ -5,9 +5,7 @@
 - Dominio canónico: `https://pinlanyards.com/`
 - Repositorio privado: `https://github.com/grimcoder1/pinlanyards.git`
 - Rama operativa: `main`
-- Instagram: `https://www.instagram.com/pinlandyards/`
-- WhatsApp comercial: `18097682327`
-- Pendiente del propietario: ruta OneDrive canónica
+- Pendientes del propietario: ruta OneDrive canónica y número comercial de WhatsApp
 
 ## Objetivo
 

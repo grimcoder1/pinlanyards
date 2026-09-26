@@ -39,10 +39,6 @@
     return base === "#" ? "#" : `${base}?text=${encodeURIComponent(text)}`;
   };
 
-  const whatsappIcon = () => `
-    <svg class="button-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-  `;
-
   function wireStaticLinks() {
     const instagram = cfg.instagramUrl || "#";
     ["#instagramTop", "#instagramFooter"].forEach((id) => {
@@ -123,7 +119,7 @@
           <p class="availability ${availabilityClass}">● ${escapeHtml(product.availability)}</p>
           <div class="product-actions">
             ${soldOut ? "" : `<button class="action-button detail" data-detail="${safeOrder}">Ver detalle</button>`}
-            <a class="action-button whatsapp ${soldOut ? "soldout" : ""}" href="${href}" target="_blank" rel="noopener">${whatsappIcon()}<span>${cta}</span></a>
+            <a class="action-button whatsapp ${soldOut ? "soldout" : ""}" href="${href}" target="_blank" rel="noopener">${cta}</a>
           </div>
         </div>
       </article>`;
@@ -142,7 +138,7 @@
     status.className = `availability ${soldOut ? "soldout" : "available"}`;
     const wa = $("#modalWhatsapp");
     wa.href = productWhatsapp(product);
-    $("#modalWhatsappLabel").textContent = soldOut ? "Pedir y reservarlo" : "Pedir por WhatsApp";
+    wa.textContent = soldOut ? "Pedir y reservarlo" : "Pedir por WhatsApp";
     modal.showModal();
   }
 

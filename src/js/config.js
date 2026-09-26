@@ -1,7 +1,7 @@
 window.PINLAND_CONFIG = {
   brandName: "Pin & Lanyards Store by shers",
   instagramUrl: "https://www.instagram.com/pinlandyards/",
-  whatsappNumber: "18097682327",
+  whatsappNumber: "",
   currency: "DOP",
   locale: "es-DO",
   shippingShort: "Envíos con costo adicional",

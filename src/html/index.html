@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/styles.css?v=2.3" />
 </head>
 <body>
   <header class="topbar">
@@ -20,13 +20,13 @@
         <span class="brand-script">Pins, lanyards y más,<br>siempre contigo ♥</span>
       </a>
       <div class="top-actions">
-        <a class="icon-link" id="instagramTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-          <span aria-hidden="true">◎</span>
+        <a class="icon-link" id="instagramTop" href="https://www.instagram.com/pinlandyards/" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="social-icon instagram-icon" aria-hidden="true"></span>
         </a>
-        <a class="icon-link" id="whatsappTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <span aria-hidden="true">◉</span>
+        <a class="icon-link" id="whatsappTop" href="https://wa.me/18097682327" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <span class="social-icon whatsapp-icon" aria-hidden="true"></span>
         </a>
-        <a class="primary-button compact" href="#catalogo">Ver catálogo completo <span>→</span></a>
+        <a class="primary-button compact" href="#catalogo" aria-label="Ver catálogo completo"><span class="compact-label-full" aria-hidden="true">Ver catálogo completo</span><span class="compact-label-short" aria-hidden="true">Catálogo</span><span aria-hidden="true">→</span></a>
       </div>
     </div>
   </header>
@@ -108,11 +108,11 @@
       </div>
       <div>
         <h3>Síguenos</h3>
-        <a id="instagramFooter" href="#" target="_blank" rel="noopener">Instagram @pinlandyards</a>
+        <a class="social-text-link" id="instagramFooter" href="https://www.instagram.com/pinlandyards/" target="_blank" rel="noopener"><span class="social-icon instagram-icon" aria-hidden="true"></span><span>Instagram @pinlandyards</span></a>
       </div>
       <div>
         <h3>Pedidos</h3>
-        <a id="whatsappFooter" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="social-text-link" id="whatsappFooter" href="https://wa.me/18097682327" target="_blank" rel="noopener"><span class="social-icon whatsapp-icon" aria-hidden="true"></span><span>WhatsApp 809-768-2327</span></a>
         <p class="small">Envíos con costo adicional. Más de 5 artículos: envío incluido dentro del Distrito Nacional.</p>
       </div>
     </div>
@@ -129,14 +129,14 @@
         <h2 id="modalTitle"></h2>
         <p class="modal-price" id="modalPrice"></p>
         <p class="availability" id="modalAvailability"></p>
-        <a class="primary-button" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="primary-button" id="modalWhatsapp" href="https://wa.me/18097682327" target="_blank" rel="noopener"><span class="social-icon whatsapp-icon button-icon" aria-hidden="true"></span><span id="modalWhatsappLabel">Pedir por WhatsApp</span></a>
         <p class="modal-note">Envíos con costo adicional. Para pedidos mayores a 5 artículos, el envío está incluido dentro del Distrito Nacional.</p>
       </div>
     </div>
   </dialog>
 
-  <script src="./js/config.js"></script>
-  <script src="./js/category-icons.js"></script>
-  <script src="./js/app.js" defer></script>
+  <script src="./js/config.js?v=2.3"></script>
+  <script src="./js/category-icons.js?v=2.3"></script>
+  <script src="./js/app.js?v=2.3" defer></script>
 </body>
 </html>

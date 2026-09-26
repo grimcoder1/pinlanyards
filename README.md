@@ -68,6 +68,10 @@ La primera versión incluye tres imágenes de demostración en `productos/` para
 
 Trabajar y probar en la rama `staging`. Cuando esté lista para publicarse, ejecutar desde la raíz del proyecto:
 
+En VS Code, usar **Terminal → Run Task → Deploy: Staging a main** y escribir el comentario del commit cuando se solicite.
+
+También puede ejecutarse directamente:
+
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy-staging-prod.ps1 `
   -CommitMessage "deploy: publicar catálogo"

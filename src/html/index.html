@@ -13,6 +13,14 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-instagram" viewBox="0 0 16 16">
+      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42A5.5 5.5 0 0 0 .768 1.72 5.5 5.5 0 0 0 .42 3.712C.222 4.22.088 4.8.048 5.654.01 6.507 0 6.78 0 8s.01 1.493.048 2.346c.04.853.174 1.434.372 1.942.2.527.47.972.817 1.319.347.347.792.617 1.318.816.509.198 1.09.333 1.942.372C6.507 15.99 6.78 16 8 16s1.493-.01 2.346-.048c.853-.04 1.434-.174 1.943-.372a5.5 5.5 0 0 0 1.992-1.3 5.5 5.5 0 0 0 1.3-1.992c.198-.509.332-1.09.372-1.942C15.99 9.493 16 9.22 16 8s-.01-1.493-.048-2.346c-.04-.853-.174-1.434-.372-1.942a5.5 5.5 0 0 0-1.3-1.992A5.5 5.5 0 0 0 12.288.42c-.509-.198-1.09-.333-1.942-.372C9.493.01 9.22 0 8 0zm0 1.441c1.196 0 1.338.005 1.812.027.46.021.71.098.876.162.22.086.377.188.542.353.165.165.267.322.353.542.064.166.141.416.162.876.022.474.027.616.027 1.812s-.005 1.338-.027 1.812c-.021.46-.098.71-.162.876a1.83 1.83 0 0 1-.353.542 1.83 1.83 0 0 1-.542.353c-.166.064-.416.141-.876.162-.474.022-.616.027-1.812.027s-1.338-.005-1.812-.027c-.46-.021-.71-.098-.876-.162a1.83 1.83 0 0 1-.542-.353 1.83 1.83 0 0 1-.353-.542c-.064-.166-.141-.416-.162-.876C1.446 9.338 1.441 9.196 1.441 8s.005-1.338.027-1.812c.021-.46.098-.71.162-.876.086-.22.188-.377.353-.542.165-.165.322-.267.542-.353.166-.064.416-.141.876-.162C6.662 1.446 6.804 1.441 8 1.441zm0 2.448a4.111 4.111 0 1 0 0 8.222 4.111 4.111 0 0 0 0-8.222zm0 6.78a2.669 2.669 0 1 1 0-5.338 2.669 2.669 0 0 1 0 5.338zm4.271-6.942a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z" />
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.93 7.93 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.9 7.9 0 0 0-2.327-5.607zM7.994 14.521a6.57 6.57 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.25a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.591-6.592 6.591zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.066-.315-.099-.445.1-.133.197-.514.645-.627.775-.115.133-.23.148-.428.05-.197-.1-.836-.308-1.592-.984-.59-.525-.988-1.173-1.104-1.37-.116-.198-.013-.306.087-.405.09-.088.197-.23.296-.345.1-.116.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.076-.61-1.47-.16-.389-.323-.335-.445-.34-.114-.006-.247-.006-.378-.006a.73.73 0 0 0-.528.247c-.182.198-.692.677-.692 1.654s.71 1.916.81 2.049c.098.132 1.394 2.132 3.383 2.992.473.205.842.326 1.129.418.475.151.907.13 1.249.079.38-.058 1.171-.48 1.338-.943.164-.462.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </symbol>
+  </svg>
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="Pin & Lanyards Store by shers">
@@ -21,12 +29,12 @@
       </a>
       <div class="top-actions">
         <a class="icon-link" id="instagramTop" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-          <span aria-hidden="true">◎</span>
+          <svg class="social-icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>
         </a>
         <a class="icon-link" id="whatsappTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <span aria-hidden="true">◉</span>
+          <svg class="social-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
         </a>
-        <a class="primary-button compact" href="#catalogo">Ver catálogo completo <span>→</span></a>
+        <a class="primary-button compact" href="#catalogo" aria-label="Ver catálogo completo"><span class="compact-label-full" aria-hidden="true">Ver catálogo completo</span><span class="compact-label-short" aria-hidden="true">Catálogo</span><span aria-hidden="true">→</span></a>
       </div>
     </div>
   </header>
@@ -38,25 +46,12 @@
           <p class="eyebrow">PINES · LANYARDS · ACCESORIOS</p>
           <h1>Detalles que <span>te identifican</span></h1>
           <p class="hero-text">Pins, lanyards y accesorios con estilo para cada ocasión.</p>
-          <div class="benefits">
-            <div><span class="benefit-icon">🎁</span><span>Productos<br><strong>originales</strong></span></div>
-            <div><span class="benefit-icon">♡</span><span>Variedad<br><strong>de diseños</strong></span></div>
-            <div><span class="benefit-icon">🚚</span><span>Envíos con<br><strong>costo adicional</strong></span></div>
-          </div>
           <a class="primary-button" href="#catalogo">Ver catálogo completo <span>→</span></a>
         </div>
         <div class="hero-photo" aria-label="Pines y lanyards">
           <img src="./assets/hero-productos.jpg" alt="Colección de pines y lanyards" />
           <div class="hero-badge">Pequeños detalles,<br>grandes historias ♥</div>
         </div>
-      </div>
-    </section>
-
-    <section class="shipping-strip">
-      <div class="container shipping-grid">
-        <div><span>🚚</span><p><strong>Envíos con costo adicional</strong><br>Disponible para coordinar según destino.</p></div>
-        <div><span>🎀</span><p><strong>Más de 5 artículos</strong><br>Envío incluido dentro del Distrito Nacional.</p></div>
-        <div><span>💬</span><p><strong>Atención personalizada</strong><br>Consulta y reserva directamente por WhatsApp.</p></div>
       </div>
     </section>
 
@@ -87,6 +82,14 @@
       </div>
     </section>
 
+    <section class="shipping-strip">
+      <div class="container shipping-grid">
+        <div><span>🚚</span><p><strong>Envíos con costo adicional</strong><br>Disponible para coordinar según destino.</p></div>
+        <div><span>🎀</span><p><strong>Más de 5 artículos</strong><br>Envío incluido dentro del Distrito Nacional.</p></div>
+        <div><span>💬</span><p><strong>Atención personalizada</strong><br>Consulta y reserva directamente por WhatsApp.</p></div>
+      </div>
+    </section>
+
     <section class="lanyard-banner">
       <div class="container banner-inner">
         <div class="banner-image"><img src="./assets/hero-productos.jpg" alt="Lanyards y accesorios" /></div>
@@ -108,11 +111,11 @@
       </div>
       <div>
         <h3>Síguenos</h3>
-        <a id="instagramFooter" href="#" target="_blank" rel="noopener">Instagram @pinlandyards</a>
+        <a class="social-text-link" id="instagramFooter" href="#" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-instagram"></use></svg><span>Instagram @pinlandyards</span></a>
       </div>
       <div>
         <h3>Pedidos</h3>
-        <a id="whatsappFooter" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="social-text-link" id="whatsappFooter" href="#" target="_blank" rel="noopener"><svg class="social-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp 809-768-2327</span></a>
         <p class="small">Envíos con costo adicional. Más de 5 artículos: envío incluido dentro del Distrito Nacional.</p>
       </div>
     </div>
@@ -129,7 +132,7 @@
         <h2 id="modalTitle"></h2>
         <p class="modal-price" id="modalPrice"></p>
         <p class="availability" id="modalAvailability"></p>
-        <a class="primary-button" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="primary-button" id="modalWhatsapp" href="#" target="_blank" rel="noopener"><svg class="button-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span id="modalWhatsappLabel">Pedir por WhatsApp</span></a>
         <p class="modal-note">Envíos con costo adicional. Para pedidos mayores a 5 artículos, el envío está incluido dentro del Distrito Nacional.</p>
       </div>
     </div>

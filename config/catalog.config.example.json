@@ -4,5 +4,5 @@
   "localRepoPath": "C:\\Users\\USUARIO\\GRIMATS\\pinlandyards-catalogo",
   "branch": "staging",
   "taskName": "PinLandYards Catalog Sync",
-  "intervalMinutes": 5
+  "intervalMinutes": 1440
 }

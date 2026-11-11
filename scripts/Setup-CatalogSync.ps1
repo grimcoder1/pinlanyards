@@ -5,7 +5,7 @@ param(
     [string]$LocalRepoPath,
     [string]$Branch = "staging",
     [string]$TaskName = "PinLandYards Catalog Sync",
-    [int]$IntervalMinutes = 5
+    [int]$IntervalMinutes = 1440
 )
 
 $ErrorActionPreference = "Stop"
@@ -37,7 +37,7 @@ if (-not (Test-Path $SourceFolder)) {
     throw "La carpeta OneDrive no existe: $SourceFolder"
 }
 if ($IntervalMinutes -lt 2) {
-    throw "Usa un intervalo de 2 minutos o mas. Recomendado: 5."
+    throw "Usa un intervalo de 2 minutos o mas. Recomendado: 1440 (24 horas)."
 }
 
 $Parent = Split-Path -Parent $LocalRepoPath
@@ -86,7 +86,7 @@ try {
         -WorkingDirectory $LocalRepoPath
     $TaskTrigger = New-ScheduledTaskTrigger `
         -Once `
-        -At (Get-Date).AddMinutes(1) `
+        -At (Get-Date).AddMinutes($IntervalMinutes) `
         -RepetitionInterval (New-TimeSpan -Minutes $IntervalMinutes)
     $TaskPrincipal = New-ScheduledTaskPrincipal `
         -UserId ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name) `

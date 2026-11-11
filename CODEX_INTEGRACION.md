@@ -295,7 +295,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Setup-CatalogSync.
   -SourceFolder "<RUTA_ONEDRIVE_CANONICA>" `
   -RepositoryUrl "<URL_REPOSITORIO_GITHUB>" `
   -Branch "staging" `
-  -IntervalMinutes 5
+  -IntervalMinutes 1440
 ```
 
 Si no se pasan `SourceFolder`, `RepositoryUrl` o `LocalRepoPath`, el script puede pedirlos interactivamente.
@@ -308,7 +308,7 @@ El setup debe:
 4. crear `.catalog-sync.local.json`,
 5. dejar ese archivo fuera de Git mediante `.gitignore`,
 6. registrar el job de Windows **PinLandYards Catalog Sync**,
-7. programarlo cada 5 minutos por defecto,
+7. programarlo cada 24 horas por defecto y ejecutar la corrida pendiente cuando el equipo vuelva a estar disponible,
 8. ejecutar una sincronización inicial,
 9. indicar dónde revisar `logs/catalog-sync.log`.
 

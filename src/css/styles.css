@@ -84,7 +84,7 @@ h1 span { color: var(--pink); display: block; }
 .benefit-icon { font-size: 30px; color: var(--pink); }
 .hero-photo { min-height: 480px; position: relative; overflow: hidden; border-radius: 0 0 0 60px; }
 .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,238,245,.18), transparent 26%); }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: left center; transform: scale(1.04); }
 .hero-badge { position: absolute; z-index: 2; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; background: rgba(255,255,255,.86); color: var(--pink-dark); font-family: "Playfair Display", serif; font-style: italic; box-shadow: var(--shadow); }
 .shipping-strip { background: #fff; border-bottom: 1px solid var(--line); }
 .shipping-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 18px 0; }

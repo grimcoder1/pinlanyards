@@ -77,11 +77,38 @@ if (-not (Test-Path $SyncScript)) {
     throw "No existe el script de sincronizacion en el repositorio: $SyncScript"
 }
 
-$TaskCommand = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$SyncScript`" -ConfigPath `"$ConfigPath`""
 Write-Host "Creando tarea programada '$TaskName' cada $IntervalMinutes minutos..."
-& schtasks.exe /Create /TN $TaskName /TR $TaskCommand /SC MINUTE /MO $IntervalMinutes /F | Out-Host
-if ($LASTEXITCODE -ne 0) {
-    throw "No se pudo crear la tarea programada. Ejecuta PowerShell con los permisos necesarios y vuelve a intentar."
+try {
+    $TaskArguments = "-NoProfile -ExecutionPolicy Bypass -File `"$SyncScript`" -ConfigPath `"$ConfigPath`""
+    $TaskAction = New-ScheduledTaskAction `
+        -Execute "powershell.exe" `
+        -Argument $TaskArguments `
+        -WorkingDirectory $LocalRepoPath
+    $TaskTrigger = New-ScheduledTaskTrigger `
+        -Once `
+        -At (Get-Date).AddMinutes(1) `
+        -RepetitionInterval (New-TimeSpan -Minutes $IntervalMinutes)
+    $TaskPrincipal = New-ScheduledTaskPrincipal `
+        -UserId ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name) `
+        -LogonType Interactive `
+        -RunLevel Limited
+    $TaskSettings = New-ScheduledTaskSettingsSet `
+        -AllowStartIfOnBatteries `
+        -DontStopIfGoingOnBatteries `
+        -StartWhenAvailable `
+        -ExecutionTimeLimit (New-TimeSpan -Minutes 30)
+
+    Register-ScheduledTask `
+        -TaskName $TaskName `
+        -Action $TaskAction `
+        -Trigger $TaskTrigger `
+        -Principal $TaskPrincipal `
+        -Settings $TaskSettings `
+        -Description "Sincroniza el catalogo de OneDrive con GitHub Pages." `
+        -Force | Out-Null
+}
+catch {
+    throw "No se pudo crear la tarea programada: $($_.Exception.Message)"
 }
 
 Write-Host "Ejecutando primera sincronizacion..."
